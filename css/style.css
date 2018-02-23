@@ -1,0 +1,4 @@
+body{background: url('../images/body_bg.jpg'); }
+h1{color:white;text-align:center;}
+.name-input{border:dashed 2px yellow;border-radius:5px;max-width:600px;margin:auto;}
+.input-field{height:35px;padding-left:20px;width:400px;margin-left:100px;border-radius:5px;border-color:blue;}
