@@ -1,4 +1,41 @@
-body{background: url('../images/body_bg.jpg'); }
+body{background: url('../images/Holi2.jpg'); }
 h1{color:white;text-align:center;}
-.name-input{border:dashed 2px yellow;border-radius:5px;max-width:600px;margin:auto;}
-.input-field{height:35px;padding-left:20px;width:400px;margin-left:100px;border-radius:5px;border-color:blue;}
+#site-title{color:blue;font-size:60px;text-align:center;font-weight:bolder;}
+.name-input{background: url('../images/body_bg.jpg');border:dashed 4px yellow;border-radius:5px;max-width:600px;margin:auto;}
+.text-field{height:35px;padding-left:20px;width:400px;margin-left:100px;border-radius:5px;border-color:blue;}
+.image{max-width:400px;margin:auto;}
+.btn{color:white;font-size:30px; font-weight:bolder; height:50px;background-color:#004d1a;width:350px;margin: 20px 0px 20px 140px;border:solid 1px white; border-radius:20px;}
+.whatsappshare{border:solid 1px black;height:50px;width:350px;font-weight:bolder; height:50px;background-color:#004d1a;width:350px;margin: 20px 0px 20px 140px;border:solid 1px white; border-radius:20px;}
+.whatsappshare a{padding-left: 40px;padding-top:20px;text-decoration:none;font-size:30px;font-weight:bolder;color:white;}
+
+
+@media (min-width: 641px) and (max-width: 980px)
+ {
+	.name-input{width:473px;}
+	.text-field{margin-left:30px;padding-left:10px;}
+	img{margin-left:20px;}
+    .btn{margin: 20px 0px 20px 65px}
+	#site-title{font-size:50px;}
+	.whatsappshare{margin:0px 0px 20px 52px;padding-top:12px;}
+}
+@media (min-width: 360px) and (max-width: 640px)
+ {
+	.name-input{width:335px;}
+	.text-field{margin-left:10px;padding-left:10px;width:295px;}
+    .btn{margin: 20px 0px 20px 30px;width:250px;height:40px;}
+	#site-title{font-size:47px;}
+	.whatsappshare{margin:0px 0px 20px 17px;padding-top:12px;width:293px;}
+	.whatsappshare a{padding-left:21px;font-size:31px;}
+	#enter-name{margin-left:0px;}
+}
+@media (min-width: 200px) and (max-width: 340px)
+ {
+	 #site-title{font-size:60px;margin-left:5px;}
+	.name-input{width:485px;margin-left:2px;}
+	.text-field{margin-left:5px;padding-left:5px;width:150px;}
+    .btn{margin: 20px 0px 20px 6px;width:455px;height:65px;font-size:45px;}
+	img{width:394px;height:446px;}
+	.whatsappshare{margin:0px 0px 20px 17px;padding-top:5px;width:437px;height:46px;}
+	.whatsappshare a{padding-left:21px;font-size:46px;}
+	#enter-name{}
+}
