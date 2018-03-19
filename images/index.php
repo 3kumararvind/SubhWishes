@@ -1,4 +1,33 @@
-
+<?php
+	include('connect.php');
+	if(isset($_GET['submit-btn']))
+	{
+		//prevent sql injection
+		$title=mysqli_real_escape_string($con,$_GET["title"]);
+		//prevent xss
+		$title = htmlspecialchars($title,ENT_COMPAT);
+		//friendly URL conversion
+		function to_prety_url($str){
+			if($str !== mb_convert_encoding( mb_convert_encoding($str, 'UTF-32', 'UTF-8'), 'UTF-8', 'UTF-32') )
+				$str = mb_convert_encoding($str, 'UTF-8', mb_detect_encoding($str));
+			$str = htmlentities($str, ENT_NOQUOTES, 'UTF-8');
+			$str = preg_replace('`&([a-z]{1,2})(acute|uml|circ|grave|ring|cedil|slash|tilde|caron|lig);`i', '\1', $str);
+			$str = html_entity_decode($str, ENT_NOQUOTES, 'UTF-8');
+			$str = preg_replace(array('`[^a-z0-9]`i','`[-]+`'), '-', $str);
+			$str = strtolower( trim($str, '-') );
+			return $str;
+	}
+	$str=to_prety_url($title);
+	// sql query for inserting data into database
+	$sql_query = "INSERT INTO wisher (title,str) VALUES ('$title','$str')";
+	$result_set=mysqli_query($con,$sql_query);
+	
+	// Redirect to Greeting Page
+	
+	header("Location: http://localhost/SubhWishes/wish.php");
+	exit();
+	}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,16 +46,15 @@
 	<div class="row">
 		<div class="col-sm-12" id="site-title">SubhWishes.com</div>
 	</div>
-	
-	<div class="name-input">
-		<div class="Ad">
+	<div class="Ad">
 		<ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-2779845155398734"
      data-ad-slot="8856413607"
      data-ad-format="auto"></ins>
 	</div>
-      <form action="wish.php" method="GET">
+	<div class="name-input">
+      <form method="GET">
         <div class="row">
 			<div class="col-sm-12" id="enter-name"><h1>Enter your name below</h1></div>
 		</div>
@@ -38,7 +66,7 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-12">
-					<input type="submit" class="btn" name="submit-btn">
+					<input type="submit" class="btn" name="submit-btn" value="GO"
 				</div>
 			</div>
 		

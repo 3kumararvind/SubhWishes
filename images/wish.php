@@ -1,3 +1,15 @@
+<?php
+include("connect.php");
+$str=mysqli_real_escape_string($con,isset($POST["str"]));
+//GET data's from the Table
+if(isset($str))
+{
+    $sql_query="SELECT * FROM wisher WHERE str='$str'";
+    $result_set=mysqli_query($con,$sql_query) or die('error');
+    $user_wish=mysqli_fetch_array($result_set);
+}
+?>
+
 <!DOCTYPE html>
 <head>
     <title>SubhWishes</title>
@@ -11,59 +23,54 @@
   </head>
 <body>
 	<div class="row">
-		<div class ="col-sm-12" id="site-title" >SubhWishes.com</div>
+		<div class ="col-sm-12" id="site-title">SubhWishes.com</div>
 	</div>
-	
-	<div class="name-input">
-		<div class="Ad">
-		<ins class="adsbygoogle"
-			 style="display:block"
-			 data-ad-client="ca-pub-2779845155398734"
-			 data-ad-slot="8856413607"
-			 data-ad-format="auto">
-		</ins>
-	</div>
-		<div class="row">
-			<div class="col-sm-12">
-				<h1><?php echo $_GET["title"]; ?><br>
-						Wishing You And Your Family <br />
-                                                Happy Ram Navami in Advance </h1>
-			</div>
-		</div>
-				
-		<div class="row">
-			<div class="col-sm-12">
-				<h1>Before <p id="demo">.</p></h1>
-			</div>
-		</div>
-		
 	<div class="Ad">
-		<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2779845155398734" data-ad-slot="8856413607"  data-ad-format="auto"></ins>
-	</div>
-		
-	
-      
-	  <div class="Ad">
-		  <ins class="adsbygoogle"
-			 style="display:inline-block;width:300px;height:500px"
-			 data-ad-client="ca-pub-2779845155398734"
-			 data-ad-slot="2071836800">
-		 </ins>
-	 </div>
-	 <div class="row">
-		<div class="col-sm-12">
-				<div class="whatsappshare">
-					<a href="whatsapp://send?text=<?php echo $_GET["title"]; ?> , has sent something for you. Click on the link to see - <?php echo $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'] ?>" tarPOST="_blank">Wish Your Friend</a>
-				</div>
+		<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2779845155398734"
+     data-ad-slot="8856413607"
+     data-ad-format="auto"></ins>
+			
 		</div>
-	</div>
-	 <form action="index.php" method="POST">
+	<div class="name-input">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1><?php echo $user_wish['str']; ?><br>
+				Wishing You And Your Family <br />Happy Holi <br/>Before <p id="demo">.</p></h1>
+				
+			</div>
+		</div>
+		<div class="Ad">
+			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2779845155398734" data-ad-slot="8856413607"  data-ad-format="auto"></ins>
+		</div>
+		
+		<div class="image">
+			<img src="./images/Holi.jpg" >
+		</div>
+      <form action="index.php" method="POST">
+		
 		<div class="row">
 			<div class="col">
 				<input type="submit" class="btn" name="submit-btn" value="Enter Your Name">
 			</div>
+			
 		</div>
-	</form>
+		
+      </form>
+	  <div class="Ad">
+	  <ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:500px"
+     data-ad-client="ca-pub-2779845155398734"
+     data-ad-slot="2071836800"></ins>
+	 </div>
+	 <div class="row">
+		<div class="col-sm-12">
+				<div class="whatsappshare">
+					<a href="whatsapp://send?text=<?php echo $user_wish['str']; ?> Hey I have Surprise For You. Click In The Link To Check - <?php echo 'http://' . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"]; ?>" tarPOST="_blank">Wish Your Friend</a>
+				</div>
+		</div>
+	</div>
 	  
     </div>
 	<script>
@@ -78,7 +85,7 @@
 	
 	<script>
 // Set the date we're counting down to
-var countDownDate = new Date("Mar 25, 2018 00:00:00").getTime();
+var countDownDate = new Date("Mar 1, 2018 00:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
