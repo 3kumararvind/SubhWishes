@@ -1,0 +1,6 @@
+body{background-color: #f5f5f0;font-family:'roboto',sans-serif;}
+
+.test{border:solid 1px black;max-height:100%;max-width: 100%}
+
+.whatsappshare{border:solid 1px black;max-height: 100%;max-width: 100%;font-weight:bolder; background-color:#004d1a;border:solid 1px white; border-radius:20px;}
+.whatsappshare a{align-content: middle; padding-left: 40px;padding-top:20px;text-decoration:none;font-size:30px;font-weight:bolder;color:white;}
