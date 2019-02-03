@@ -1,44 +1,40 @@
-body{background: url('../images/pattern.png'); }
-h1{color:#000000
-;text-align:center;}
-#site-title{color:#c6ff1a;font-size:60px;text-align:center;font-weight:bolder;}
-.name-input{background: url('../images/rama_1.gif');border:dashed 4px yellow;border-radius:5px;max-width:600px;margin:auto;}
-.text-field{height:35px;padding-left:20px;width:400px;margin-left:100px;border-radius:5px;border-color:blue;}
-.image{width:400px;margin:10px;}
-.image img{margin-left:10px;}
-.btn{color:white;font-size:30px; font-weight:bolder; height:50px;background-color:#004d1a;width:350px;margin: 20px 0px 20px 140px;border:solid 1px white; border-radius:20px;}
-.whatsappshare{border:solid 1px black;height:50px;width:350px;font-weight:bolder; height:50px;background-color:#004d1a;width:350px;margin: 20px 0px 20px 140px;border:solid 1px white; border-radius:20px;}
-.whatsappshare a{padding-left: 40px;padding-top:20px;text-decoration:none;font-size:30px;font-weight:bolder;color:white;}
+body{ font-family: 'Oswald', sans-serif;margin:0px;padding:0px;}
 
+/*Website Title*/
+.webtitle {width:100%;border:solid 1px black; background-color:lightsalmon;height:80px;}
+.webtitle p {text-align: -webkit-center; font-family:Fjalla One; font-size: 50px;font-weight:bolder; color:white;}
+#main-body{background-color: rgba(210, 25, 113, 0.47);}
+.card{margin:5px 5px 5px 20px;height:300px; width:300px;text-align:center;}
 
-@media (min-width: 641px) and (max-width: 980px)
- {
-	.name-input{width:405px;margin-left:0px;}
-	.text-field{margin-left:30px;padding-left:10px;width:330px;}
-	img{margin-left:0px;width:340px;}
-    .btn{margin: 20px 0px 20px 24px}
-	#site-title{font-size:50px;}
-	.whatsappshare{margin:0px 0px 20px 24px;padding-top:12px;}
+/*valentine card*/
+
+.valentine-card{background-image:url(../images/valentine-images/valentine-background.jpg);}
+.valentine-card .card-body{text-align:center;font-weight:bolder;font-size:30px;}
+
+.valentine-text-body h1{text-decoration:underline;color:unset;text-align:left;padding-left:10px;}
+.valentine-text-body h1:hover{color:red;}
+.valentine-text-body h2{font-family:cursive;}
+.valentine-text-body h3{text-align:left;padding-left:10px; color:lightsalmon;}
+.valentine-text-body p{text-align:left; padding:0px 10px 0px 10px;}
+
+/*image center*/
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
-@media (min-width: 360px) and (max-width: 640px)
- {
-	.name-input{width:335px;}
-	.text-field{margin-left:10px;padding-left:10px;width:295px;}
-    .btn{margin: 20px 0px 20px 30px;width:250px;height:40px;}
-	#site-title{font-size:47px;}
-	.whatsappshare{margin:0px 0px 20px 17px;padding-top:12px;width:293px;}
-	.whatsappshare a{padding-left:21px;font-size:20px;}
-	#enter-name{margin-left:0px;}
-	img{margin-left:0px;width:300px;}
+.right-sidebar-ads{
+	display:block;
+	border:solid ;
+	margin: 20 px;
 }
-@media (min-width: 200px) and (max-width: 340px)
- {
-	 #site-title{font-size:55px;margin-left:5px;}
-	.name-input{width:402px;margin-left:2px;}
-	.text-field{margin-left:5px;padding-left:5px;width:150px;}
-    .btn{margin: 20px 0px 20px 6px;width:391px;height:65px;font-size:45px;}
-	img{width:378px;height:266px;}
-	.whatsappshare{margin:0px 0px 20px 17px;padding-top:5px;width:375px;height:46px;}
-	.whatsappshare a{padding-left:21px;font-size:38px;}
-	#enter-name{}
-}
+.valentines-gift{padding:10px;}
+.valentine-text-body{  color:black;}
+
+.valentine-details-table{margin:20px; clear:both; }
+
+tr,td{text-align:center;}
+.Chocolate-text-body{clear:both;padding: 10px;}
+.copy-right-text{background-color:lightsalmon; text-align:center; }
+.copy-right-text{font-size: 15px;font-weight:bolder;font-family:sans-serif;}
